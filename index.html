@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#1D6E8C"><title>Zui System — aplikasi usaha yang saling terhubung</title>
+<meta name="description" content="Zui System: stok, produksi, keuangan, dan karyawan dalam satu login. Gratis dipasang di ponsel dan komputer, tanpa toko aplikasi.">
+<link rel="icon" href="icon-192.png"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600&display=swap">
+<style>
+:root{--bg:#EDF0F3;--ink:#16202A;--mu:#5C6B78;--ln:#CBD3DA;--ac:#1D6E8C;--am:#B9791A;--ok:#2E7D5B;--on:#fff}
+@media(prefers-color-scheme:dark){:root{--bg:#10171E;--ink:#E7ECF0;--mu:#8D9BA7;--ln:#27323C;--ac:#5BB4D2;--on:#10171E;--am:#D9A04A;--ok:#5FBF93}}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
+.w{max-width:880px;margin:0 auto;padding:0 20px}
+nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;font-size:13px}
+nav b{font:600 15px Outfit,sans-serif;letter-spacing:.14em}nav a{color:var(--mu);text-decoration:none;margin-left:18px}
+h1,h2{font-family:Outfit,sans-serif;font-weight:200;letter-spacing:-.01em}
+.hero{padding:56px 0 40px}h1{font-size:clamp(42px,9vw,76px);line-height:1.02}h1 em{font-style:normal;color:var(--ac)}
+.hero p{max-width:540px;margin-top:20px;color:var(--mu);font-size:17px}
+.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+a.b,button.b{font:inherit;font-size:14px;padding:9px 18px;border:1px solid var(--ln);border-radius:999px;background:none;color:var(--ink);text-decoration:none;cursor:pointer}
+a.b.p,button.b.p{background:var(--ac);border-color:var(--ac);color:var(--on)}a.b.off{opacity:.45;pointer-events:none}
+section{padding:36px 0;border-top:1px solid var(--ln)}h2{font-size:34px;margin-bottom:6px}.sub{color:var(--mu);margin-bottom:22px}
+.app{display:grid;grid-template-columns:1fr;gap:6px;padding:20px 0;border-bottom:1px solid var(--ln)}.app:last-child{border:0}
+.app h3{font:300 26px Outfit,sans-serif}.app .t{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ac)}.app p{color:var(--mu);max-width:560px}
+.app .ac{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;margin-top:6px}.st div b{display:block;font:300 22px Outfit,sans-serif;color:var(--ac);margin-bottom:2px}.st div span{color:var(--mu);font-size:14px}
+ol.f{list-style:none;counter-reset:n;display:grid;gap:12px}ol.f li{counter-increment:n;padding-left:42px;position:relative;color:var(--mu)}ol.f li:before{content:counter(n);position:absolute;left:0;top:-4px;font:200 30px Outfit,sans-serif;color:var(--ac)}ol.f li b{color:var(--ink);font-weight:600}
+footer{padding:30px 0 50px;color:var(--mu);font-size:13px;border-top:1px solid var(--ln)}
+dialog{border:1px solid var(--ln);background:var(--bg);color:var(--ink);border-radius:14px;padding:22px;max-width:440px;width:calc(100% - 32px)}dialog::backdrop{background:#0008}
+dialog h3{font:300 24px Outfit,sans-serif;margin-bottom:10px}dialog h4{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);margin:14px 0 4px}dialog p,dialog li{color:var(--mu);font-size:14px}dialog ol{padding-left:18px}
+</style></head><body>
+<div class="w"><nav><b>ZUI</b><div><a href="#aplikasi">Aplikasi</a><a href="#alur">Cara kerja</a><a href="#pasang">Pasang</a></div></nav>
+<header class="hero"><h1>Usaha Anda,<br><em>satu alur.</em></h1><p>Stok, produksi, keuangan, dan karyawan dalam aplikasi yang saling bicara. Satu login, satu perusahaan, setiap divisi tahu giliran kerjanya.</p>
+<div class="cta"><a class="b p" href="#aplikasi">Lihat aplikasi</a><a class="b" href="#pasang">Cara memasang</a></div></header>
+<section id="aplikasi"><h2>Aplikasi</h2><p class="sub">Masing-masing berdiri sendiri, tetapi memakai akun dan data perusahaan yang sama.</p><div id="apps"></div></section>
+<section><div class="st"><div><b>Satu login</b><span>Daftar sekali di Zui System, lalu semua aplikasi terbuka sesuai peran.</span></div><div><b>Tanpa toko aplikasi</b><span>Dipasang langsung dari peramban, ikon muncul di layar utama.</span></div><div><b>Tetap ringan</b><span>Satu berkas per aplikasi, cepat dibuka, terang dan gelap otomatis.</span></div></div></section>
+<section id="alur"><h2>Alur yang bekerja</h2><p class="sub">Persetujuan dan serah-terima antardivisi, supaya tidak ada langkah yang terlewat. Bisa dimatikan oleh pemilik.</p>
+<ol class="f"><li><b>Pembelian.</b> Dibuat, disetujui Admin, dikonfirmasi Keuangan, lalu diterima Gudang.</li><li><b>Produksi.</b> Resep (BoM) disetujui Mutu, Produksi meminta bahan, Gudang menyerahkan, hasil diuji Mutu, lalu masuk stok.</li><li><b>Keuangan.</b> Pengeluaran diajukan, disetujui Pemilik atau Admin, dan pembayaran otomatis diterapkan ke pembelian.</li><li><b>Karyawan.</b> Absen mandiri dan cuti yang diputuskan Pemilik atau Admin.</li></ol></section>
+<section id="pasang"><h2>Cara memasang</h2><p class="sub">Tidak perlu mengunduh dari toko aplikasi. Buka aplikasinya, lalu pasang ke perangkat.</p>
+<ol class="f"><li><b>Android (Chrome).</b> Buka aplikasi, ketuk menu ⋮, pilih <i>Instal aplikasi</i> atau <i>Tambahkan ke layar utama</i>.</li><li><b>iPhone dan iPad (Safari).</b> Buka aplikasi, ketuk tombol Bagikan, pilih <i>Tambahkan ke Layar Utama</i>.</li><li><b>Komputer (Chrome atau Edge).</b> Klik ikon pasang di kolom alamat, atau menu ⋮ lalu <i>Instal</i>.</li></ol>
+<div class="cta"><button class="b" onclick="document.getElementById('dl').showModal()">Tentang unduhan kode</button></div></section>
+<footer>Zui System · dibuat untuk usaha yang bekerja dengan hati-hati.</footer></div>
+<dialog id="dl"><h3>Unduhan</h3><h4>Pasang (disarankan)</h4><p>Setiap aplikasi adalah aplikasi web progresif. Pasang dari halamannya sendiri; pembaruan datang otomatis.</p><h4>Unduh kode</h4><p>Tombol "Unduh kode" mengambil berkas aplikasi sebagai ZIP dari GitHub, untuk dipasang di hosting Anda sendiri.</p><h4>APK Android</h4><p>Bisa dibuat dari aplikasi web ini bila diperlukan; tombolnya muncul di kartu aplikasi begitu berkas APK diisi.</p><div style="margin-top:16px;text-align:right"><button class="b" onclick="this.closest('dialog').close()">Tutup</button></div></dialog>
+<script>
+/* ISI alamat dan repo GitHub tiap aplikasi di sini. repo: "namaakun/namarepo". apk: alamat berkas .apk (opsional). */
+const APPS=[
+{n:'Zui System',t:'Pusat',d:'Daftarkan perusahaan, undang anggota, atur peran, logo, dan alur persetujuan. Lihat semua tugas yang menunggu Anda.',url:'https://zuisystem.com/',repo:'USERNAME/zui-system'},
+{n:'Zui Inventori',t:'Stok dan penjualan',d:'Barang, batch dan kedaluwarsa, penjualan, pembelian bertahap, kontak, dan laporan.',url:'https://inventori.zuisystem.com/',repo:'USERNAME/zui-inventori'},
+{n:'Zui Manufaktur',t:'Produksi',d:'Resep (BoM), perintah produksi, permintaan bahan ke gudang, dan uji mutu.',url:'https://manufaktur.zuisystem.com/',repo:'USERNAME/zui-manufaktur'},
+{n:'Zui Keuangan',t:'Kas, utang, piutang',d:'Akun kas dan bank, pengeluaran dengan persetujuan, utang vendor, dan piutang pelanggan.',url:'https://keuangan.zuisystem.com/',repo:'USERNAME/zui-keuangan'},
+{n:'Zui Karyawan',t:'Orang',d:'Data karyawan, absen masuk dan pulang, jatah dan persetujuan cuti.',url:'https://karyawan.zuisystem.com/',repo:'USERNAME/zui-karyawan'},
+{n:'Zui Jurnal',t:'Mandiri',d:'Jurnal rencana, proyek, tugas, dan progres pribadi. Berdiri sendiri, terpisah dari perusahaan.',url:'',repo:'',apk:''}
+];
+const E=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+document.getElementById('apps').innerHTML=APPS.map(a=>{const ok=/^https?:/.test(a.url),zip=a.repo&&!/USERNAME/.test(a.repo),apk=/^https?:/.test(a.apk||'');
+return`<div class="app"><div class="t">${E(a.t)}</div><h3>${E(a.n)}</h3><p>${E(a.d)}</p><div class="ac"><a class="b p${ok?'':' off'}" href="${ok?E(a.url):'#'}" ${ok?'rel="noopener"':''}>${ok?'Buka dan pasang':'Segera'}</a>${zip?`<a class="b" href="https://github.com/${E(a.repo)}/archive/refs/heads/main.zip" rel="noopener">Unduh kode (ZIP)</a>`:''}${apk?`<a class="b" href="${E(a.apk)}" rel="noopener">APK Android</a>`:''}</div></div>`}).join('');
+if('serviceWorker' in navigator&&/^https?:/.test(location.protocol))navigator.serviceWorker.register('sw.js').catch(()=>{});
+</script></body></html>
