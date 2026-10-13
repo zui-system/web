@@ -1,57 +1,92 @@
 <!DOCTYPE html>
 <html lang="id"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#1D6E8C"><title>Zui System — aplikasi usaha yang saling terhubung</title>
-<meta name="description" content="Zui System: stok, produksi, keuangan, dan karyawan dalam satu login. Gratis dipasang di ponsel dan komputer, tanpa toko aplikasi.">
-<link rel="icon" href="icon-192.png"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600&display=swap">
+<meta name="theme-color" content="#1D6E8C"><title>Zui — aplikasi usaha yang saling terhubung</title>
+<meta name="description" content="Stok, produksi, keuangan, dan karyawan dalam satu login. Setiap divisi menunggu konfirmasi divisi sebelumnya, jadi tidak ada langkah yang terlewat.">
+<link rel="icon" href="icon-192.png"><link rel="manifest" href="manifest.webmanifest"><link rel="apple-touch-icon" href="icon-192.png">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Outfit:wght@100;200;300;400&display=swap">
 <style>
-:root{--bg:#EDF0F3;--ink:#16202A;--mu:#5C6B78;--ln:#CBD3DA;--ac:#1D6E8C;--am:#B9791A;--ok:#2E7D5B;--on:#fff}
-@media(prefers-color-scheme:dark){:root{--bg:#10171E;--ink:#E7ECF0;--mu:#8D9BA7;--ln:#27323C;--ac:#5BB4D2;--on:#10171E;--am:#D9A04A;--ok:#5FBF93}}
-*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--ink);font:15px/1.6 system-ui,-apple-system,"Segoe UI",sans-serif}
-.w{max-width:880px;margin:0 auto;padding:0 20px}
-nav{display:flex;justify-content:space-between;align-items:center;padding:18px 0;font-size:13px}
-nav b{font:600 15px Outfit,sans-serif;letter-spacing:.14em}nav a{color:var(--mu);text-decoration:none;margin-left:18px}
-h1,h2{font-family:Outfit,sans-serif;font-weight:200;letter-spacing:-.01em}
-.hero{padding:56px 0 40px}h1{font-size:clamp(42px,9vw,76px);line-height:1.02}h1 em{font-style:normal;color:var(--ac)}
-.hero p{max-width:540px;margin-top:20px;color:var(--mu);font-size:17px}
-.cta{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
-a.b,button.b{font:inherit;font-size:14px;padding:9px 18px;border:1px solid var(--ln);border-radius:999px;background:none;color:var(--ink);text-decoration:none;cursor:pointer}
-a.b.p,button.b.p{background:var(--ac);border-color:var(--ac);color:var(--on)}a.b.off{opacity:.45;pointer-events:none}
-section{padding:36px 0;border-top:1px solid var(--ln)}h2{font-size:34px;margin-bottom:6px}.sub{color:var(--mu);margin-bottom:22px}
-.app{display:grid;grid-template-columns:1fr;gap:6px;padding:20px 0;border-bottom:1px solid var(--ln)}.app:last-child{border:0}
-.app h3{font:300 26px Outfit,sans-serif}.app .t{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ac)}.app p{color:var(--mu);max-width:560px}
-.app .ac{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
-.st{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:22px;margin-top:6px}.st div b{display:block;font:300 22px Outfit,sans-serif;color:var(--ac);margin-bottom:2px}.st div span{color:var(--mu);font-size:14px}
-ol.f{list-style:none;counter-reset:n;display:grid;gap:12px}ol.f li{counter-increment:n;padding-left:42px;position:relative;color:var(--mu)}ol.f li:before{content:counter(n);position:absolute;left:0;top:-4px;font:200 30px Outfit,sans-serif;color:var(--ac)}ol.f li b{color:var(--ink);font-weight:600}
-footer{padding:30px 0 50px;color:var(--mu);font-size:13px;border-top:1px solid var(--ln)}
-dialog{border:1px solid var(--ln);background:var(--bg);color:var(--ink);border-radius:14px;padding:22px;max-width:440px;width:calc(100% - 32px)}dialog::backdrop{background:#0008}
-dialog h3{font:300 24px Outfit,sans-serif;margin-bottom:10px}dialog h4{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ac);margin:14px 0 4px}dialog p,dialog li{color:var(--mu);font-size:14px}dialog ol{padding-left:18px}
+:root{--bg:#EDF0F3;--ink:#16202A;--mu:#566673;--ln:#C9D1D8;--ac:#1D6E8C;--ok:#2E7D5B;--pn:#fff;--tl:#1D6E8C;--tg:#2E7D5B;--ta:#9A6212;--ts:#2B3A47;--tp:#6B4A78;--tr:#3F5A8C}
+@media(prefers-color-scheme:dark){:root{--bg:#10171E;--ink:#E7ECF0;--mu:#93A1AC;--ln:#27323C;--ac:#5BB4D2;--ok:#5FBF93;--pn:#17212A}}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth}@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 "IBM Plex Sans",system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit}:focus-visible{outline:2px solid var(--ac);outline-offset:3px}
+.w{max-width:1040px;margin:0 auto;padding:0 22px}
+h1,h2,h3{font-family:Outfit,"Segoe UI",system-ui,sans-serif;font-weight:200;line-height:1.05;letter-spacing:-.02em}
+nav{display:flex;justify-content:space-between;align-items:center;padding:20px 0}
+nav .lg{font:300 28px Outfit,"Segoe UI",system-ui,sans-serif;letter-spacing:.02em;text-decoration:none}nav .lk{display:flex;gap:22px;align-items:center;font-size:14px}nav .lk a{text-decoration:none;color:var(--mu)}nav .lk a:hover{color:var(--ink)}
+.b{display:inline-block;font:500 15px "IBM Plex Sans",sans-serif;padding:11px 22px;border:1px solid var(--ink);background:none;color:var(--ink);text-decoration:none;cursor:pointer;border-radius:0}
+.b.p{background:var(--ac);border-color:var(--ac);color:#fff}.b:hover{filter:brightness(1.08)}
+.hero{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;padding:56px 0 72px}
+h1{font-size:clamp(46px,7.4vw,92px);font-weight:100}.hero p.l{font-size:18px;color:var(--mu);max-width:30em;margin:24px 0 30px}
+.hero .cta{display:flex;gap:12px;flex-wrap:wrap}
+.demo{background:var(--pn);border:1px solid var(--ln);padding:22px}
+.demo h3{font-size:15px;font-weight:500;font-family:"IBM Plex Sans",system-ui,sans-serif;letter-spacing:0;color:var(--mu);margin-bottom:12px}
+.po{display:flex;justify-content:space-between;gap:12px;padding-bottom:14px;border-bottom:1px solid var(--ln)}.po b{font:300 26px Outfit,"Segoe UI",system-ui,sans-serif;display:block}.po span{font-size:13px;color:var(--mu)}
+.tl{list-style:none;padding:0;margin:14px 0}.tl li{display:grid;grid-template-columns:22px 1fr;gap:12px;padding:9px 0;position:relative;color:var(--mu);font-size:15px}
+.tl li:before{content:"";width:12px;height:12px;border:2px solid var(--ln);border-radius:50%;margin:5px 0 0 3px;background:var(--pn);z-index:1}
+.tl li:after{content:"";position:absolute;left:8px;top:28px;bottom:-8px;width:2px;background:var(--ln)}.tl li:last-child:after{display:none}
+.tl li.dn{color:var(--ink)}.tl li.dn:before{background:var(--ok);border-color:var(--ok)}.tl li.dn:after{background:var(--ok)}
+.tl li.nx{color:var(--ink);font-weight:600}.tl li.nx:before{border-color:var(--ac);background:var(--ac);box-shadow:0 0 0 4px color-mix(in srgb,var(--ac) 22%,transparent)}
+.tl small{display:block;font-weight:400;color:var(--mu);font-size:13px}
+.act{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;min-height:46px}.act .m{font-size:13px;color:var(--mu);max-width:15em}
+section{padding:72px 0;border-top:1px solid var(--ln)}h2{font-size:clamp(34px,5vw,56px);font-weight:200;max-width:14em}.sub{color:var(--mu);max-width:34em;margin:14px 0 36px;font-size:17px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:190px;gap:6px}
+.tile{position:relative;color:#fff;padding:18px;display:flex;flex-direction:column;justify-content:space-between;text-decoration:none;transition:transform .18s}
+.tile:hover{transform:translateY(-3px)}.tile h3{font-size:30px;font-weight:200;color:#fff}.tile p{font-size:14px;line-height:1.45;opacity:.92;max-width:20em;margin-top:6px}
+.tile .go{display:flex;gap:14px;font-size:13px;font-weight:500}.tile .go span{border-bottom:1px solid #fff9}
+.t1{grid-column:span 2;grid-row:span 2;background:var(--tl)}.t1 h3{font-size:54px;font-weight:100}.t2{background:var(--tg)}.t3{background:var(--ta)}.t4{background:var(--ts)}.t5{background:var(--tr)}.t6{grid-column:span 4;background:var(--tp)}
+.tile.off{pointer-events:none}
+.st{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border:1px solid var(--ln)}.st>div{padding:26px;border-right:1px solid var(--ln)}.st>div:last-child{border:0}.st h3{font-size:26px;font-weight:300;margin-bottom:8px}.st p{color:var(--mu);font-size:15px}
+ol.f{list-style:none;counter-reset:n;display:grid;grid-template-columns:repeat(3,1fr);gap:28px}ol.f li{counter-increment:n;color:var(--mu)}ol.f li:before{content:counter(n);display:block;font:100 64px/1 Outfit,"Segoe UI",system-ui,sans-serif;color:var(--ac);margin-bottom:10px}ol.f b{display:block;color:var(--ink);font-weight:600;margin-bottom:4px}
+.dv{display:grid;grid-template-columns:repeat(3,1fr);gap:0}.dv>div{padding:0 26px;border-left:1px solid var(--ln)}.dv>div:first-child{padding-left:0;border:0}.dv h3{font-size:24px;font-weight:300;margin-bottom:8px}.dv p{color:var(--mu);font-size:15px}
+.fin{background:var(--ac);color:#fff;padding:64px 0;border:0}.fin h2{color:#fff;max-width:12em}.fin p{margin:16px 0 28px;max-width:30em;opacity:.92}.fin .b{background:#fff;color:#16202A;border-color:#fff}
+footer{padding:28px 0 44px;color:var(--mu);font-size:13px;display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap}
+dialog{border:1px solid var(--ln);background:var(--bg);color:var(--ink);padding:24px;max-width:440px;width:calc(100% - 32px)}dialog::backdrop{background:#0008}dialog h3{font-size:26px;margin-bottom:10px}dialog p{color:var(--mu);font-size:15px;margin-bottom:10px}
+@media(max-width:860px){.hero{grid-template-columns:1fr;gap:36px;padding:36px 0 52px}.tiles{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}.t1{grid-row:span 1}.t1 h3{font-size:40px}.t6{grid-column:span 2}.st,.dv,ol.f{grid-template-columns:1fr}.st>div{border:0;border-bottom:1px solid var(--ln)}.dv>div{padding:18px 0;border:0;border-top:1px solid var(--ln)}nav .lk a:not(.b){display:none}section{padding:52px 0}}
 </style></head><body>
-<div class="w"><nav><b>ZUI</b><div><a href="#aplikasi">Aplikasi</a><a href="#alur">Cara kerja</a><a href="#pasang">Pasang</a></div></nav>
-<header class="hero"><h1>Usaha Anda,<br><em>satu alur.</em></h1><p>Stok, produksi, keuangan, dan karyawan dalam aplikasi yang saling bicara. Satu login, satu perusahaan, setiap divisi tahu giliran kerjanya.</p>
-<div class="cta"><a class="b p" href="#aplikasi">Lihat aplikasi</a><a class="b" href="#pasang">Cara memasang</a></div></header>
-<section id="aplikasi"><h2>Aplikasi</h2><p class="sub">Masing-masing berdiri sendiri, tetapi memakai akun dan data perusahaan yang sama.</p><div id="apps"></div></section>
-<section><div class="st"><div><b>Satu login</b><span>Daftar sekali di Zui System, lalu semua aplikasi terbuka sesuai peran.</span></div><div><b>Tanpa toko aplikasi</b><span>Dipasang langsung dari peramban, ikon muncul di layar utama.</span></div><div><b>Tetap ringan</b><span>Satu berkas per aplikasi, cepat dibuka, terang dan gelap otomatis.</span></div></div></section>
-<section id="alur"><h2>Alur yang bekerja</h2><p class="sub">Persetujuan dan serah-terima antardivisi, supaya tidak ada langkah yang terlewat. Bisa dimatikan oleh pemilik.</p>
-<ol class="f"><li><b>Pembelian.</b> Dibuat, disetujui Admin, dikonfirmasi Keuangan, lalu diterima Gudang.</li><li><b>Produksi.</b> Resep (BoM) disetujui Mutu, Produksi meminta bahan, Gudang menyerahkan, hasil diuji Mutu, lalu masuk stok.</li><li><b>Keuangan.</b> Pengeluaran diajukan, disetujui Pemilik atau Admin, dan pembayaran otomatis diterapkan ke pembelian.</li><li><b>Karyawan.</b> Absen mandiri dan cuti yang diputuskan Pemilik atau Admin.</li></ol></section>
-<section id="pasang"><h2>Cara memasang</h2><p class="sub">Tidak perlu mengunduh dari toko aplikasi. Buka aplikasinya, lalu pasang ke perangkat.</p>
-<ol class="f"><li><b>Android (Chrome).</b> Buka aplikasi, ketuk menu ⋮, pilih <i>Instal aplikasi</i> atau <i>Tambahkan ke layar utama</i>.</li><li><b>iPhone dan iPad (Safari).</b> Buka aplikasi, ketuk tombol Bagikan, pilih <i>Tambahkan ke Layar Utama</i>.</li><li><b>Komputer (Chrome atau Edge).</b> Klik ikon pasang di kolom alamat, atau menu ⋮ lalu <i>Instal</i>.</li></ol>
-<div class="cta"><button class="b" onclick="document.getElementById('dl').showModal()">Tentang unduhan kode</button></div></section>
-<footer>Zui System · dibuat untuk usaha yang bekerja dengan hati-hati.</footer></div>
-<dialog id="dl"><h3>Unduhan</h3><h4>Pasang (disarankan)</h4><p>Setiap aplikasi adalah aplikasi web progresif. Pasang dari halamannya sendiri; pembaruan datang otomatis.</p><h4>Unduh kode</h4><p>Tombol "Unduh kode" mengambil berkas aplikasi sebagai ZIP dari GitHub, untuk dipasang di hosting Anda sendiri.</p><h4>APK Android</h4><p>Bisa dibuat dari aplikasi web ini bila diperlukan; tombolnya muncul di kartu aplikasi begitu berkas APK diisi.</p><div style="margin-top:16px;text-align:right"><button class="b" onclick="this.closest('dialog').close()">Tutup</button></div></dialog>
+<div class="w"><nav><a class="lg" href="#">Zui</a><div class="lk"><a href="#aplikasi">Aplikasi</a><a href="#coba">Uji coba</a><a href="#pasang">Pasang</a><a class="b p" id="n1" href="#coba">Minta akses</a></div></nav>
+<header class="hero"><div><h1>Setiap divisi tahu giliran kerjanya.</h1><p class="l">Pembelian, gudang, produksi, keuangan, dan karyawan dalam satu login. Tiap langkah menunggu konfirmasi divisi sebelumnya, jadi tidak ada yang terlewat dan semuanya tercatat.</p>
+<div class="cta"><a class="b p" href="#coba">Coba 14 hari</a><a class="b" href="#aplikasi">Lihat aplikasinya</a></div></div>
+<div class="demo" aria-live="polite"><h3>Coba sendiri: satu pembelian lewat tiga divisi</h3><div class="po"><div><b>PO-0142</b><span>CV Esens Oud · 200 botol</span></div><div style="text-align:right"><b style="white-space:nowrap;font-size:22px">Rp 12.400.000</b><span id="ds">Baru dibuat</span></div></div>
+<ol class="tl" id="tl"></ol><div class="act" id="da"></div></div></header></div>
+
+<section id="aplikasi"><div class="w"><h2>Enam aplikasi, satu perusahaan</h2><p class="sub">Berdiri sendiri, tetapi memakai akun dan data yang sama. Pasang yang Anda perlukan.</p><div class="tiles" id="tiles"></div></div></section>
+
+<section><div class="w"><div class="dv"><div><h3>Satu login</h3><p>Daftar sekali di Zui System. Pemilik mengundang tim, dan setiap orang hanya melihat bagian sesuai perannya.</p></div><div><h3>Persetujuan yang bisa dimatikan</h3><p>Untuk usaha kecil yang terasa berat, pemilik bisa mematikan wajib persetujuan kapan saja.</p></div><div><h3>Dipasang dari peramban</h3><p>Tanpa toko aplikasi. Ikon muncul di layar utama, dan pembaruan datang sendiri.</p></div></div></div></section>
+
+<section id="coba"><div class="w"><h2>Uji coba 14 hari, mulai hari ini</h2><p class="sub">Pendaftaran perusahaan dibuka lewat persetujuan, supaya kami bisa membantu Anda memulai.</p>
+<ol class="f"><li><b>Kirim permintaan</b>Masuk ke Zui System dengan email Anda, lalu isi nama usaha dan WhatsApp.</li><li><b>Kami setujui</b>Setelah disetujui, buka Zui System lagi dan tekan Coba lagi.</li><li><b>Buat perusahaan</b>Uji coba 14 hari mulai otomatis. Undang tim Anda dan coba alurnya.</li></ol>
+<div style="margin-top:36px"><a class="b p" id="n2" href="#">Minta akses di Zui System</a></div></div></section>
+
+<section id="pasang"><div class="w"><h2>Pasang di perangkat Anda</h2><p class="sub">Buka aplikasinya, lalu pasang. Tidak perlu mengunduh dari toko aplikasi.</p>
+<div class="dv"><div><h3>Android</h3><p>Di Chrome, ketuk menu ⋮, lalu <i>Instal aplikasi</i>.</p></div><div><h3>iPhone dan iPad</h3><p>Di Safari, ketuk Bagikan, lalu <i>Tambahkan ke Layar Utama</i>.</p></div><div><h3>Komputer</h3><p>Di Chrome atau Edge, klik ikon pasang di kolom alamat.</p></div></div>
+<p class="sub" style="margin:28px 0 0">Ingin memasang di hosting sendiri? <a href="#" onclick="document.getElementById('dl').showModal();return false">Lihat opsi unduhan kode</a>.</p></div></section>
+
+<section class="fin"><div class="w"><h2>Mulai dari satu pembelian.</h2><p>Buat PO pertama Anda dan lihat bagaimana gudang dan keuangan ikut bergerak.</p><a class="b" id="n3" href="#coba">Minta akses</a></div></section>
+<div class="w"><footer><span>Zui · aplikasi usaha untuk tim yang bekerja dengan hati-hati</span><span>Dibuat di Indonesia</span></footer></div>
+<dialog id="dl"><h3>Unduhan</h3><p>Setiap aplikasi adalah aplikasi web progresif. Pasang dari halamannya sendiri; pembaruan datang otomatis.</p><p>Tombol "Kode" pada kartu aplikasi mengambil berkas sebagai ZIP dari GitHub, untuk dipasang di hosting Anda sendiri.</p><p>Berkas APK Android muncul di kartu aplikasi bila sudah tersedia.</p><button class="b" onclick="this.closest('dialog').close()">Tutup</button></dialog>
 <script>
-/* ISI alamat dan repo GitHub tiap aplikasi di sini. repo: "namaakun/namarepo". apk: alamat berkas .apk (opsional). */
+/* ISI: alamat Zui System (untuk tombol Minta akses), alamat tiap aplikasi, repo GitHub ("akun/repo"), dan apk (opsional). */
+const SYS_URL='https://zuisystem.com/';
 const APPS=[
-{n:'Zui System',t:'Pusat',d:'Daftarkan perusahaan, undang anggota, atur peran, logo, dan alur persetujuan. Lihat semua tugas yang menunggu Anda.',url:'https://zuisystem.com/',repo:'USERNAME/zui-system'},
-{n:'Zui Inventori',t:'Stok dan penjualan',d:'Barang, batch dan kedaluwarsa, penjualan, pembelian bertahap, kontak, dan laporan.',url:'https://inventori.zuisystem.com/',repo:'USERNAME/zui-inventori'},
-{n:'Zui Manufaktur',t:'Produksi',d:'Resep (BoM), perintah produksi, permintaan bahan ke gudang, dan uji mutu.',url:'https://manufaktur.zuisystem.com/',repo:'USERNAME/zui-manufaktur'},
-{n:'Zui Keuangan',t:'Kas, utang, piutang',d:'Akun kas dan bank, pengeluaran dengan persetujuan, utang vendor, dan piutang pelanggan.',url:'https://keuangan.zuisystem.com/',repo:'USERNAME/zui-keuangan'},
-{n:'Zui Karyawan',t:'Orang',d:'Data karyawan, absen masuk dan pulang, jatah dan persetujuan cuti.',url:'https://karyawan.zuisystem.com/',repo:'USERNAME/zui-karyawan'},
-{n:'Zui Jurnal',t:'Mandiri',d:'Jurnal rencana, proyek, tugas, dan progres pribadi. Berdiri sendiri, terpisah dari perusahaan.',url:'',repo:'',apk:''}
+{c:'t1',n:'Zui System',d:'Daftarkan perusahaan, undang anggota, atur peran dan alur persetujuan. Semua tugas yang menunggu Anda ada di sini.',url:SYS_URL,repo:'USERNAME/zui-system'},
+{c:'t2',n:'Inventori',d:'Stok, batch, penjualan, pembelian.',url:'https://inventori.zuisystem.com/',repo:'USERNAME/zui-inventori'},
+{c:'t3',n:'Manufaktur',d:'Resep, produksi, uji mutu.',url:'https://manufaktur.zuisystem.com/',repo:'USERNAME/zui-manufaktur'},
+{c:'t4',n:'Keuangan',d:'Kas, utang, piutang.',url:'https://keuangan.zuisystem.com/',repo:'USERNAME/zui-keuangan'},
+{c:'t5',n:'Karyawan',d:'Absen, cuti, data tim.',url:'https://karyawan.zuisystem.com/',repo:'USERNAME/zui-karyawan'},
+{c:'t6',n:'Jurnal',d:'Rencana, proyek, dan tugas pribadi. Berdiri sendiri, terpisah dari perusahaan.',url:'',repo:'',apk:''}
 ];
-const E=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-document.getElementById('apps').innerHTML=APPS.map(a=>{const ok=/^https?:/.test(a.url),zip=a.repo&&!/USERNAME/.test(a.repo),apk=/^https?:/.test(a.apk||'');
-return`<div class="app"><div class="t">${E(a.t)}</div><h3>${E(a.n)}</h3><p>${E(a.d)}</p><div class="ac"><a class="b p${ok?'':' off'}" href="${ok?E(a.url):'#'}" ${ok?'rel="noopener"':''}>${ok?'Buka dan pasang':'Segera'}</a>${zip?`<a class="b" href="https://github.com/${E(a.repo)}/archive/refs/heads/main.zip" rel="noopener">Unduh kode (ZIP)</a>`:''}${apk?`<a class="b" href="${E(a.apk)}" rel="noopener">APK Android</a>`:''}</div></div>`}).join('');
+const E=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),ok=u=>/^https?:/.test(u||'');
+document.getElementById('tiles').innerHTML=APPS.map(a=>{const zip=a.repo&&!/USERNAME/.test(a.repo),apk=ok(a.apk),on=ok(a.url);
+const ex=(zip?`<a href="https://github.com/${E(a.repo)}/archive/refs/heads/main.zip" rel="noopener" style="text-decoration:none"><span>Kode</span></a>`:'')+(apk?`<a href="${E(a.apk)}" rel="noopener" style="text-decoration:none"><span>APK</span></a>`:'');
+return`<div class="tile ${a.c}${on?'':' off'}"><div><h3>${E(a.n)}</h3><p>${E(a.d)}</p></div><div class="go">${on?`<a href="${E(a.url)}" rel="noopener" style="text-decoration:none"><span>Buka dan pasang</span></a>`:'<span>Segera</span>'}${ex}</div></div>`}).join('');
+['n1','n2','n3'].forEach(i=>{const e=document.getElementById(i);if(ok(SYS_URL)&&i==='n2')e.href=SYS_URL});
+/* demo alur */
+const ST=[{r:'Pembelian',t:'PO dibuat',s:'Menunggu persetujuan Admin',b:null},{r:'Admin',t:'Menyetujui pembelian',s:'Menunggu konfirmasi Keuangan',b:'Setujui sebagai Admin'},{r:'Keuangan',t:'Mengonfirmasi pembelian',s:'Menunggu barang di gudang',b:'Konfirmasi sebagai Keuangan'},{r:'Gudang',t:'Menerima barang',s:'Selesai',b:'Terima sebagai Gudang'}];
+let k=0;const tl=document.getElementById('tl'),da=document.getElementById('da'),ds=document.getElementById('ds');
+function dr(){tl.innerHTML=ST.map((x,i)=>`<li class="${i<=k?'dn':i===k+1?'nx':''}"><div>${x.r}<small>${i<=k?x.t:'menunggu'}</small></div></li>`).join('');ds.textContent=ST[k].s;
+da.innerHTML=k<3?`<span class="m">Giliran ${ST[k+1].r}. Langkah berikutnya terkunci sampai ini selesai.</span><button class="b p" onclick="k++;dr()">${ST[k+1].b}</button>`:`<span class="m">Stok bertambah 200 botol dan utang Rp 12.400.000 tercatat di Keuangan.</span><button class="b" onclick="k=0;dr()">Ulangi</button>`}
+dr();
 if('serviceWorker' in navigator&&/^https?:/.test(location.protocol))navigator.serviceWorker.register('sw.js').catch(()=>{});
 </script></body></html>
