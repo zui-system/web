@@ -168,13 +168,13 @@ const APPS=[
 const PAKET=[{n:'1 bulan',b:1,N:{IDR:149000,MYR:39,USD:9},P:{IDR:79000,MYR:21,USD:5}},{n:'6 bulan',b:6,N:{IDR:799000,MYR:209,USD:49},P:{IDR:399000,MYR:109,USD:25},ft:'Paling banyak dipilih'},{n:'1 tahun',b:12,N:{IDR:1490000,MYR:389,USD:89},P:{IDR:699000,MYR:189,USD:44}}];
 const PROMO='Harga promo peluncuran untuk pelanggan awal.';
 const E=s=>String(s||'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])),ok=u=>/^https?:/.test(u||'');
-document.getElementById('ap').innerHTML=APPS.map(a=>{const zip=a.repo&&!/USERNAME/.test(a.repo),apk=ok(a.apk),on=ok(a.url);
+function rA(){document.getElementById('ap').innerHTML=APPS.map(a=>{const zip=a.repo&&!/USERNAME/.test(a.repo),apk=ok(a.apk),on=ok(a.url);
 const ex=(zip?`<a href="https://github.com/${E(a.repo)}/archive/refs/heads/main.zip" rel="noopener">Kode</a>`:'')+(apk?`<a href="${E(a.apk)}" rel="noopener">APK</a>`:'');
 return`<li><h3>${E(a.n)}</h3><p>${E(a.d)}</p><div class="go">${on?`<a href="${E(a.url)}" rel="noopener">Buka dan pasang</a>`:'<span>Segera</span>'}${ex}</div></li>`}).join('');
 if(ok(SYS_URL))['nm','nm2','n3'].forEach(i=>{document.getElementById(i).href=SYS_URL});
 /* menu aplikasi: dibuat dari daftar APPS, jadi aplikasi baru cukup ditambah di sana */
 const mnu=APPS.map(a=>ok(a.url)?`<a href="${E(a.url)}" rel="noopener"><b>${E(a.n)}</b><small>${E(a.d)}</small></a>`:`<span class="sg"><b>${E(a.n)}</b><small>Segera</small></span>`).join('');
-document.getElementById('ddm').innerHTML=mnu;document.getElementById('mal').innerHTML=mnu;
+document.getElementById('ddm').innerHTML=mnu;document.getElementById('mal').innerHTML=mnu;}rA();
 const ddb=document.getElementById('ddb'),ddm=document.getElementById('ddm'),hb=document.getElementById('hb'),mm=document.getElementById('mm'),mab=document.getElementById('mab'),mal=document.getElementById('mal');
 function ddx(o){ddm.hidden=!o;ddb.setAttribute('aria-expanded',o)}
 function mmx(o){mm.hidden=!o;hb.setAttribute('aria-expanded',o);hb.setAttribute('aria-label',o?'Tutup menu':'Buka menu');document.body.classList.toggle('mo',o)}
