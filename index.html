@@ -203,4 +203,5 @@ function sel(i,play){var a=V[i];vv.pause();vv.poster='video/'+a.k+'.jpg';vv.inne
 document.getElementById('vh').textContent=a.n+': '+a.t;document.getElementById('vd').textContent=a.d;document.getElementById('vl').innerHTML=a.s.map(function(x){return '<li>'+x.replace(/&/g,'&amp;').replace(/</g,'&lt;')+'</li>'}).join('');document.getElementById('vx').textContent='Durasi '+a.dur+' · tanpa suara';
 [].forEach.call(vt.children,function(b,j){b.setAttribute('aria-selected',j===i)});if(play)vv.play().catch(function(){})}
 vt.innerHTML=V.map(function(a,i){return '<button type="button" role="tab" aria-selected="false">'+a.n+'<small>'+a.t+'</small></button>'}).join('');
-[].forEach.call(vt.children,function(b,i){b.onclick=function(){sel(i,true)}});sel(0,false)})()</script></body></html>
+[].forEach.call(vt.children,function(b,i){b.onclick=function(){sel(i,true)}});sel(0,false)})()</script><script src="admin.js"></script>
+</body></html>

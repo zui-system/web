@@ -16,3 +16,5 @@ Di komputer, menu **Aplikasi** membuka daftar bertingkat; di HP, ikon menu membu
 - Layar buka website kini memakai animasi yang sama dengan aplikasi (huruf ZUI naik satu per satu, SYSTEM muncul pelan, garis biru memanjang lalu berdenyut), ±7,6 detik, tampil setiap website dibuka, tidak bisa dilewati, tetap jalan walau perangkat memakai mode "kurangi gerakan". Cache `zui-web-v10`.
 
 - Link aplikasi memakai satu domain: `https://zuisystem.com/inventori/`, `/manufaktur/`, `/keuangan/`, `/karyawan/` (sebelumnya subdomain terpisah). Cache `zui-web-v11`.
+
+- **Pengaturan pribadi** (`admin.js`): tersembunyi, buka dengan menambah `#pengaturan` di alamat atau mengetuk logo 5x cepat. Dikunci kata sandi (disimpan sebagai hash di peramban pemilik). Isinya: ubah teks utama, tambah/ubah urutan/hapus gambar dan video (muncul sebagai bagian Galeri), ganti kata sandi. Data tersimpan di peramban pemilik saja (localStorage + IndexedDB), tidak terlihat pengunjung lain. Unggah `admin.js` bersama `index.html` dan `sw.js`. Cache `zui-web-v12`.
