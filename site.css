@@ -78,3 +78,9 @@ footer{padding:44px 0 36px;color:var(--mu);font-size:14px}
 .cta-in{background:var(--nv);color:var(--nvt);padding:30px 32px;margin:48px 0 0;border-radius:3px}.cta-in h2{color:var(--nvt);font-size:28px;margin:0 0 10px!important}.cta-in p{opacity:.88;margin:0 0 20px}.cta-in .b{background:var(--nvt);color:var(--nv);border-color:var(--nvt);text-decoration:none}
 .rel{margin-top:44px;padding-top:24px;border-top:1px solid var(--ln);font-size:16px}
 @media(max-width:900px){.hero{grid-template-columns:1fr;gap:44px;padding:28px 0 60px}.hd{grid-template-columns:1fr;gap:28px}.kt,.kt.k2,ol.f,.oth,.bl{grid-template-columns:1fr}.kt{border-right:0}ol.f li{padding-right:0}.fc{grid-template-columns:1fr 1fr}.lk{display:none}.hb{display:block}section{padding:60px 0}.art{grid-template-columns:1fr;gap:28px}.toc{position:static;border:1px solid var(--ln);padding:16px 18px;background:var(--pn)}.pr{font-size:17px}}
+
+/* video cara pakai */
+.vg2{display:grid;grid-template-columns:320px 1fr;gap:64px;align-items:center}
+.ph2{background:var(--nv);padding:12px;border-radius:34px;box-shadow:0 26px 50px -28px rgba(14,34,48,.6);width:320px;max-width:100%}
+.ph2 video{display:block;width:100%;height:auto;aspect-ratio:600/1230;border-radius:24px;background:#0F2A3D}
+@media(max-width:900px){.vg2{grid-template-columns:1fr;gap:32px;justify-items:center}.vg2>div:last-child{justify-self:stretch}}
