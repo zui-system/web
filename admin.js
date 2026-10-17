@@ -28,8 +28,9 @@ const stor=async()=>SG||(SG=await(async()=>{const c=await core(),m=await imp('st
 const msg=e=>/permission|insufficient/i.test(e&&(e.code+e.message))?'Akun ini bukan pemilik, atau aturan Firebase belum dipasang.':(e&&e.message)||'Gagal.';
 
 /* menerapkan konfigurasi ke halaman */
-const hyd=c=>({t:c.t||{},apps:cl(c.apps||D0.apps),paket:cl(c.paket||D0.paket),faq:cl(c.faq||D0.faq),tema:cl(c.tema||{}),hide:cl(c.hide||{}),mail:c.mail||''});
-function apply(c){const t=c.t||{},m=c.tema||{},h=c.hide||{},ft=FT[+m.f||0];
+const HD=h=>Object.assign({cara:true},h);
+const hyd=c=>({t:c.t||{},apps:cl(c.apps||D0.apps),paket:cl(c.paket||D0.paket),faq:cl(c.faq||D0.faq),tema:cl(c.tema||{}),hide:HD(cl(c.hide||{})),mail:c.mail||''});
+function apply(c){const t=c.t||{},m=c.tema||{},h=HD(c.hide),ft=FT[+m.f||0];
 F.forEach(([s],i)=>{const e=q(s);if(e)e.textContent=t[i]||orig[i]});
 let css='';if(m.ac)css+=`:root{--ac:${m.ac};--acs:color-mix(in srgb,${m.ac} 12%,var(--pn))}`;
 const lt=[m.bg&&`--bg:${m.bg}`,m.ink&&`--ink:${m.ink}`,m.nv&&`--nv:${m.nv}`].filter(Boolean).join(';');if(lt)css+=`@media(prefers-color-scheme:light){:root{${lt}}}`;
